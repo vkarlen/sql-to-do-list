@@ -61,3 +61,10 @@ router.delete('/:id', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+// Mark a task as complete
+router.put('/:id', (req, res) => {
+  console.log('In router PUT');
+
+  res.sendStatus(201);
+});

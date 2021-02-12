@@ -95,4 +95,18 @@ function deleteTask() {
 
 function markDone() {
   console.log('in markDone');
+
+  // send update to server
+  $.ajax({
+    method: 'PUT',
+    url: `/tasks/${$(this).data('id')}`,
+  })
+    .then((res) => {
+      console.log('Marked done');
+      getList();
+    })
+    .catch((err) => {
+      console.log('Not completed', err);
+      alert('Could not mark this task as done. Try again.');
+    });
 } // end markDone
