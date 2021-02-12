@@ -9,7 +9,7 @@ function addTask() {
 
   $.ajax({
     method: 'POST',
-    url: '/tasks/',
+    url: '/tasks',
     data: { task: $('#taskIn').val() },
   })
     .then((res) => {
@@ -28,4 +28,14 @@ function getList() {
   console.log('in getList');
 
   // Get current list from the server
+  $.ajax({
+    method: 'GET',
+    url: '/tasks',
+  })
+    .then((res) => {
+      console.log('Back from server');
+    })
+    .catch((err) => {
+      console.log('Didnt get list', err);
+    });
 }
