@@ -3,6 +3,7 @@ $(document).ready(onReady);
 function onReady() {
   $('#submitBtn').on('click', addTask);
   $(document).on('click', '.delete', deleteTask);
+  $(document).on('click', '.markDone', markDone);
 
   getList();
 } // end onReady
@@ -91,3 +92,7 @@ function deleteTask() {
       alert('Could not delete task. Try again.');
     });
 } // end deleteTask
+
+function markDone() {
+  console.log('in markDone');
+} // end markDone
