@@ -2,6 +2,7 @@ $(document).ready(onReady);
 
 function onReady() {
   $('#submitBtn').on('click', addTask);
+  $(document).on('click', '.delete', deleteTask);
 
   getList();
 } // end onReady
@@ -70,3 +71,23 @@ function updateTable(taskList) {
     </tr>`);
   }
 } // end updateTable
+
+function deleteTask() {
+  //console.log('in delete', $(this).data('id'));
+  let taskId = $(this).data('id');
+
+  // Send delete request to server
+  $.ajax({
+    method: 'DELETE',
+    url: `/tasks/${taskId}`,
+  })
+    .then((res) => {
+      //console.log('back from server');
+
+      getList();
+    })
+    .catch((err) => {
+      console.log('Failed to delete', err);
+      alert('Could not delete task. Try again.');
+    });
+}
