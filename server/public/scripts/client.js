@@ -7,21 +7,25 @@ function onReady() {
 function addTask() {
   //console.log('in addTask');
 
-  const newTask = {
-    task: $('#taskIn').val(),
-  };
-  // console.log(newTask);
-
   $.ajax({
     method: 'POST',
     url: '/tasks/',
     data: { task: $('#taskIn').val() },
   })
     .then((res) => {
-      console.log('Back from server');
+      //console.log('Back from server');
+
+      $('#taskIn').val('');
+      getList();
     })
     .catch((err) => {
       console.log('Task not added', err);
-      alert('Task not added. Try again later.');
+      alert('Task not added. Try again.');
     });
+} // end addTask
+
+function getList() {
+  console.log('in getList');
+
+  // Get current list from the server
 }
