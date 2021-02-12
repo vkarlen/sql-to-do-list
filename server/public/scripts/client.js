@@ -53,12 +53,14 @@ function updateTable(taskList) {
   for (const task of taskList) {
     //console.log(task);
     let rowClass = '';
+
     // check if Done
     if (task.isDone === true) {
       //console.log('this is done', task);
-      // Set class 'complete' and append
+      // Set class 'complete'
       rowClass = 'complete';
     }
+
     // append to DOM
     $('#taskTable').append(`<tr class ="${rowClass}">
       <td>${task.task}</td>
