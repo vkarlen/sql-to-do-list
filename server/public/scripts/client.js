@@ -2,14 +2,16 @@ $(document).ready(onReady);
 
 function onReady() {
   $('#submitBtn').on('click', addTask);
-}
+
+  getList();
+} // end onReady
 
 function addTask() {
   //console.log('in addTask');
 
   $.ajax({
     method: 'POST',
-    url: '/tasks/',
+    url: '/tasks',
     data: { task: $('#taskIn').val() },
   })
     .then((res) => {
@@ -25,7 +27,46 @@ function addTask() {
 } // end addTask
 
 function getList() {
-  console.log('in getList');
+  //console.log('in getList');
 
   // Get current list from the server
-}
+  $.ajax({
+    method: 'GET',
+    url: '/tasks',
+  })
+    .then((res) => {
+      //console.log('Back from server');
+      //console.log(res);
+
+      updateTable(res);
+    })
+    .catch((err) => {
+      console.log('Didnt get list', err);
+    });
+} // end getList
+
+function updateTable(taskList) {
+  //console.log('in updateTable');
+  $('#taskTable').empty();
+
+  // loop through task list
+  for (const task of taskList) {
+    //console.log(task);
+    let rowClass = '';
+
+    // check if Done
+    if (task.isDone === true) {
+      //console.log('this is done', task);
+      // Set class 'complete'
+      rowClass = 'complete';
+    }
+
+    // append to DOM
+    $('#taskTable').append(`<tr class ="${rowClass}">
+      <td>${task.task}</td>
+      <td>${task.isDone}</td>
+      <td><button class="markDone" data-id="${task.id}">✓</button></td>
+      <td><button class="delete" data-id="${task.id}">X</button></td>
+    </tr>`);
+  }
+} // end updateTable
