@@ -5,11 +5,11 @@
 - [x] Set up file structure
   - [x] folders: server, public, scripts, styles, vendors, routes
   - [x] files: index.html, client.js, server.js, .gitignore, task_router.js, style.css
-- [] Add jQuery
-- [] npm init
-- [] npm install express
-- [] npm install pg
-- [] Add start command to package.json
+- [x] Add jQuery
+- [x] npm init
+- [x] npm install express
+- [x] npm install pg
+- [x] Add start command to package.json
 - [] Wire files together so theyre chattin
 - [] Set up database called weekend-to-do-app
 - [] Create db table
