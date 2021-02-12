@@ -7,7 +7,7 @@ const pool = new pg.Pool({
 });
 
 pool.on('connect', () => {
-  console.log('Connected to pg');
+  //console.log('Connected to pg');
 });
 
 pool.on('error', (err) => {

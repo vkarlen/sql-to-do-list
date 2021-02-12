@@ -10,7 +10,7 @@ module.exports = router;
 router.post('/', (req, res) => {
   //console.log('in router');
   let newTask = req.body;
-  console.log(newTask);
+  //console.log(newTask);
 
   // set up Query text
   let queryText = `INSERT INTO "task_list" ("task")
@@ -46,7 +46,7 @@ router.get('/', (req, res) => {
 
 // Delete task
 router.delete('/:id', (req, res) => {
-  console.log('in Delete router');
+  //console.log('in Delete router');
   let bookId = req.params.id;
 
   let sqlText = 'DELETE FROM "task_list" WHERE "id"=$1';
