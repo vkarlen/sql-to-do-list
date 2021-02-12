@@ -23,7 +23,8 @@
 - [x] Show all tasks that need to be completed on the DOM
 - [x] Each item should have a complete and delete button
 - [x] Completed tasks should show it visibly on the DOM via color change or strike through or something
-- [] Delete should remove it from the DOM and the db
+- [x] Delete should remove it from the DOM and the db
+- [] Complete button should set isDone to true in db, re render list
 - [] Style this b
   - [] background color
   - [] font family & size

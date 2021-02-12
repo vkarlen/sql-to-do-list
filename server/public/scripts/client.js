@@ -90,4 +90,4 @@ function deleteTask() {
       console.log('Failed to delete', err);
       alert('Could not delete task. Try again.');
     });
-}
+} // end deleteTask
