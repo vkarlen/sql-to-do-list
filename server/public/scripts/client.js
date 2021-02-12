@@ -94,7 +94,7 @@ function deleteTask() {
 } // end deleteTask
 
 function markDone() {
-  console.log('in markDone');
+  //console.log('in markDone');
 
   // send update to server
   $.ajax({
@@ -102,7 +102,7 @@ function markDone() {
     url: `/tasks/${$(this).data('id')}`,
   })
     .then((res) => {
-      console.log('Marked done');
+      //console.log('Marked done');
       getList();
     })
     .catch((err) => {
