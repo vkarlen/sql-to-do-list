@@ -10,13 +10,13 @@
 - [x] npm install express
 - [x] npm install pg
 - [x] Add start command to package.json
-- [] Wire files together so theyre chattin
-- [] Set up database called weekend-to-do-app
-- [] Create db table
-  - [] id
-  - [] task
-  - [] isDone
-- [] Add database.sql file to file structure
+- [x] Wire files together so theyre chattin
+- [x] Set up database called weekend-to-do-app
+- [x] Create db table
+  - [x] id
+  - [x] task
+  - [x] isDone
+- [x] Add database.sql file to file structure
 - [] Create inputs for user to enter a task
   - [] add a submit button
 - [] Submit should POST the task to the server and add it to the database
