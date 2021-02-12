@@ -7,7 +7,22 @@ const pool = require('../modules/pool');
 module.exports = router;
 
 router.post('/', (req, res) => {
-  console.log('in router');
+  //console.log('in router');
+  let newTask = req.body;
+  console.log(newTask);
 
-  res.send('oki doke');
+  // set up Query text
+  let queryText = `INSERT INTO "task_list" ("task")
+  VALUES ($1);`;
+
+  // set task to the server
+  pool
+    .query(queryText, [newTask.task])
+    .then((dbRes) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log('err in post', err);
+      res.sendStatus(500);
+    });
 });
