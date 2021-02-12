@@ -61,3 +61,20 @@ router.delete('/:id', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+// Mark a task as complete
+router.put('/:id', (req, res) => {
+  //console.log('In router PUT');
+  let taskId = req.params.id;
+  let sqlText = `UPDATE "task_list" SET "isDone"='true' WHERE "id"=$1`;
+
+  pool
+    .query(sqlText, [taskId])
+    .then((resDB) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log('Error in PUT', err);
+      res.sendStatus(500);
+    });
+});

@@ -24,7 +24,7 @@
 - [x] Each item should have a complete and delete button
 - [x] Completed tasks should show it visibly on the DOM via color change or strike through or something
 - [x] Delete should remove it from the DOM and the db
-- [] Complete button should set isDone to true in db, re render list
+- [x] Complete button should set isDone to true in db, re render list
 - [] Style this b
   - [] background color
   - [] font family & size
@@ -34,7 +34,6 @@
 ## Do Later
 
 - [] Sort list by isDone so completed tasks fall to the bottom. (isDone and then id maybe?)
-- [] Add note field to tasks
 
 ## Stretch Goals
 
