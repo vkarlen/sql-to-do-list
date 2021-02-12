@@ -43,7 +43,7 @@ function getList() {
       updateTable(res);
     })
     .catch((err) => {
-      console.log('Didnt get list', err);
+      console.log("Didn't get list", err);
     });
 } // end getList
 
