@@ -21,7 +21,7 @@
   - [x] add a submit button
 - [x] Submit should POST the task to the server and add it to the database
 - [] Show all tasks that need to be completed on the DOM
-- [] Each item should have a complete and delete button
+- [x] Each item should have a complete and delete button
 - [] Completed tasks should show it visibly on the DOM via color change or strike through or something
 - [] Delete should remove it from the DOM and the db
 - [] Style this b
