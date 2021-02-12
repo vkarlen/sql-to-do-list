@@ -30,7 +30,16 @@ router.post('/', (req, res) => {
 
 // Send task_list to client
 router.get('/', (req, res) => {
-  console.log('in GET');
+  //console.log('in GET');
+  let queryText = 'SELECT * FROM "task_list" ORDER BY "isDone"';
 
-  res.send('oki doke');
+  pool
+    .query(queryText)
+    .then((dbRes) => {
+      res.send(dbRes.rows);
+    })
+    .catch((err) => {
+      console.log('Error getting tasks', err);
+      res.sendStatus(500);
+    });
 });

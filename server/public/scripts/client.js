@@ -34,8 +34,9 @@ function getList() {
   })
     .then((res) => {
       console.log('Back from server');
+      console.log(res);
     })
     .catch((err) => {
       console.log('Didnt get list', err);
     });
-}
+} // end getList
