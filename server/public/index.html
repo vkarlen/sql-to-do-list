@@ -11,5 +11,34 @@
   </head>
   <body>
     <h1>SQL To-Do List</h1>
+    <input type="text" id="taskIn" />
+    <button id="submitBtn">Submit</button>
+
+    <h2>Task List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>isDone</th>
+          <!-- isDone column is for testing only-->
+          <th>Done</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vacuum</td>
+          <td>False</td>
+          <td><button class="markDone">✓</button></td>
+          <td><button class="delete">X</button></td>
+        </tr>
+        <tr>
+          <td>Vacuum</td>
+          <td>False</td>
+          <td><button class="markDone">✓</button></td>
+          <td><button class="delete">X</button></td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
