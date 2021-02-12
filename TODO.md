@@ -29,12 +29,28 @@
   - [] background color
   - [] font family & size
   - [] task change
-- []
 
 ## Do Later
 
-- [] Sort list by isDone so completed tasks fall to the bottom. (isDone and then id maybe?)
+- [x] Sort list by isDone so completed tasks fall to the bottom. (isDone and then id maybe?)
 
 ## Stretch Goals
 
-- []
+### feature-styling-bootstrap
+
+- [] Add Bootstrap to front end for additional style
+  - [] Buttons - make create and complete green and delete red
+  - [] Inputs - style text input
+  - [] Responsive - make app responsive to different screen sizes [Layout](https://getbootstrap.com/docs/4.1/layout/overview/)
+
+### feature-confirm-delete
+
+- [] Create an "Are you sure?" when deleting a task
+
+### feature-ordering-task-query
+
+- [] Use [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos.
+
+### feature-time-completed
+
+- [] Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format using moment.js
