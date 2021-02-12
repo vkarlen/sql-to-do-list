@@ -52,15 +52,19 @@ function updateTable(taskList) {
   // loop through task list
   for (const task of taskList) {
     //console.log(task);
-
+    let rowClass = '';
     // check if Done
-
+    if (task.isDone === true) {
+      //console.log('this is done', task);
+      // Set class 'complete' and append
+      rowClass = 'complete';
+    }
     // append to DOM
-    $('#taskTable').append(`<tr>
-    <td>${task.task}</td>
-    <td>${task.isDone}</td>
-    <td><button class="markDone" data-id="${task.id}">✓</button></td>
-    <td><button class="delete" data-id="${task.id}">X</button></td>
-  </tr>`);
+    $('#taskTable').append(`<tr class ="${rowClass}">
+      <td>${task.task}</td>
+      <td>${task.isDone}</td>
+      <td><button class="markDone" data-id="${task.id}">✓</button></td>
+      <td><button class="delete" data-id="${task.id}">X</button></td>
+    </tr>`);
   }
 } // end updateTable
