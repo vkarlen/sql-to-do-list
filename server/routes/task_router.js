@@ -4,7 +4,7 @@ const pg = require('pg');
 
 const pool = require('../modules/pool');
 
-module.exports = router;
+let currentSort = 'id';
 
 // Add inputted task to db
 router.post('/', (req, res) => {
@@ -78,3 +78,13 @@ router.put('/:id', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+// Changes global sort
+router.put('/sort/:order', (req, res) => {
+  currentSort = req.params.order;
+  //console.log(currentSort);
+
+  res.sendStatus(200);
+});
+
+module.exports = router;

@@ -131,14 +131,10 @@ function markDone() {
 } // end markDone
 
 function changeSort() {
-  let newSort = $('#sortBy').val();
-  //console.log(newSort);
-
   // send update to server
   $.ajax({
     method: 'PUT',
-    url: '/api/sort',
-    data: { newSort },
+    url: `/tasks/sort/${$('#sortBy').val()}`,
   })
     .then((res) => {
       console.log('sort updated');

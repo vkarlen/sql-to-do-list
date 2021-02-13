@@ -16,8 +16,3 @@ const port = 5000;
 app.listen(port, function () {
   console.log("I'm in.", port);
 });
-
-app.put('/api/sort', (req, res) => {
-  currentSort = req.body.newSort;
-  res.sendStatus(200);
-});
