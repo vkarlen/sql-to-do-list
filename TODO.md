@@ -33,7 +33,14 @@
 ## Personal Stretch Goals
 
 - [] Drop down to change list order
-- [] Priority setting
+  - [] order entered (id)
+  - [] priority level (priority)
+  - [] alphabetical (task)
+- [x] Priority setting
+  - [x] use drop down to enter priority
+  - [x] shows low/medium/high when rendered to DOM
+  - [x] shows nothing if no priority
+  - [x] background changes depending on priority
 
 ## Do Later
 

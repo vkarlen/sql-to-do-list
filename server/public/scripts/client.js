@@ -14,7 +14,10 @@ function addTask() {
   $.ajax({
     method: 'POST',
     url: '/tasks',
-    data: { task: $('#taskIn').val() },
+    data: {
+      task: $('#taskIn').val(),
+      priority: $('#priorityIn').val(),
+    },
   })
     .then((res) => {
       //console.log('Back from server');
@@ -54,17 +57,34 @@ function updateTable(taskList) {
   for (const task of taskList) {
     //console.log(task);
     let rowClass = '';
+    let priorityText = '';
 
     // check if Done
     if (task.isDone === true) {
       // Set class 'complete'
       rowClass = 'complete';
+    } else {
+      // if it is not done, set up the priority displays
+      if (task.priority === '1') {
+        //low
+        priorityText = 'low';
+        rowClass = 'lowPriority';
+      } else if (task.priority === '2') {
+        //medium
+        priorityText = 'medium';
+        rowClass = 'medPriority';
+      } else if (task.priority === '3') {
+        //high
+        priorityText = 'high';
+        rowClass = 'highPriority';
+      }
+      // priority level 0 intentionally excluded
     }
 
     // append to DOM
     $('#taskTable').append(`<tr class ="${rowClass}">
       <td>${task.task}</td>
-      <td>${task.isDone}</td>
+      <td>${priorityText}</td>
       <td><button class="markDone" data-id="${task.id}">✓</button></td>
       <td><button class="delete" data-id="${task.id}">X</button></td>
     </tr>`);

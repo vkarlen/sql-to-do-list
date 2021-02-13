@@ -5,5 +5,6 @@ DROP TABLE IF EXISTS "task_list";
 CREATE TABLE "task_list" (
 	"id" SERIAL PRIMARY KEY,
 	"task" VARCHAR(1024),
+  "priority" VARCHAR(1),
 	"isDone" BOOLEAN DEFAULT FALSE
 );

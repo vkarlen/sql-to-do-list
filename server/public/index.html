@@ -12,6 +12,15 @@
   <body>
     <h1>SQL To-Do List</h1>
     <input type="text" id="taskIn" />
+    <label>
+      Priority:
+      <select id="priorityIn">
+        <option value="0">None</option>
+        <option value="1">Low</option>
+        <option value="2">Medium</option>
+        <option value="3">High</option>
+      </select>
+    </label>
     <button id="submitBtn">Submit</button>
 
     <h2>Task List</h2>
@@ -19,8 +28,7 @@
       <thead>
         <tr>
           <th>Task</th>
-          <th>isDone</th>
-          <!-- isDone column is for testing only-->
+          <th>Priority</th>
           <th>Done</th>
           <th>Delete</th>
         </tr>

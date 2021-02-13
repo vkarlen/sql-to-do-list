@@ -3,5 +3,17 @@ body {
 }
 
 .complete {
-  background-color: grey;
+  background-color: lightgrey;
+}
+
+.lowPriority {
+  background-color: lightgreen;
+}
+
+.medPriority {
+  background-color: lightgoldenrodyellow;
+}
+
+.highPriority {
+  background-color: lightcoral;
 }

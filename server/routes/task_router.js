@@ -13,12 +13,12 @@ router.post('/', (req, res) => {
   //console.log(newTask);
 
   // set up Query text
-  let queryText = `INSERT INTO "task_list" ("task")
-  VALUES ($1);`;
+  let queryText = `INSERT INTO "task_list" ("task", "priority")
+  VALUES ($1, $2);`;
 
   // send task to the db
   pool
-    .query(queryText, [newTask.task])
+    .query(queryText, [newTask.task, newTask.priority])
     .then((dbRes) => {
       res.sendStatus(201);
     })
