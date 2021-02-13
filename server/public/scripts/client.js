@@ -7,7 +7,6 @@ function onReady() {
   $('#sortBy').on('change', changeSort);
 
   getList();
-  changeSort();
 } // end onReady
 
 function addTask() {
@@ -34,7 +33,7 @@ function addTask() {
 } // end addTask
 
 function getList() {
-  //console.log('in getList');
+  console.log('in getList');
 
   // Get current list from the server
   $.ajax({
@@ -133,6 +132,20 @@ function markDone() {
 
 function changeSort() {
   let newSort = $('#sortBy').val();
+  //console.log(newSort);
 
-  console.log(newSort);
+  // send update to server
+  $.ajax({
+    method: 'PUT',
+    url: '/api/sort',
+    data: { newSort },
+  })
+    .then((res) => {
+      console.log('sort updated');
+      getList();
+    })
+    .catch((err) => {
+      console.log('Sort error', err);
+      alert('Sort order was not updated. Try again.');
+    });
 }
