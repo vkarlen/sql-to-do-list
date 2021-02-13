@@ -11,10 +11,14 @@ function onReady() {
 function addTask() {
   //console.log('in addTask');
 
+  console.log($('#priorityIn').val());
   $.ajax({
     method: 'POST',
     url: '/tasks',
-    data: { task: $('#taskIn').val() },
+    data: {
+      task: $('#taskIn').val(),
+      priority: $('#priorityIn').val(),
+    },
   })
     .then((res) => {
       //console.log('Back from server');

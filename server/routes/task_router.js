@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
 
   // send task to the db
   pool
-    .query(queryText, [newTask.task])
+    .query(queryText, [newTask.task, newTask.priority])
     .then((dbRes) => {
       res.sendStatus(201);
     })
