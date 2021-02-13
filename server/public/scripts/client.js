@@ -64,7 +64,7 @@ function updateTable(taskList) {
     // append to DOM
     $('#taskTable').append(`<tr class ="${rowClass}">
       <td>${task.task}</td>
-      <td>${task.isDone}</td>
+      <td>${task.priority}</td>
       <td><button class="markDone" data-id="${task.id}">✓</button></td>
       <td><button class="delete" data-id="${task.id}">X</button></td>
     </tr>`);
