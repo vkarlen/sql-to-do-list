@@ -4,8 +4,10 @@ function onReady() {
   $('#submitBtn').on('click', addTask);
   $(document).on('click', '.delete', deleteTask);
   $(document).on('click', '.markDone', markDone);
+  $('#sortBy').on('change', changeSort);
 
   getList();
+  changeSort();
 } // end onReady
 
 function addTask() {
@@ -128,3 +130,9 @@ function markDone() {
       alert('Could not mark this task as done. Try again.');
     });
 } // end markDone
+
+function changeSort() {
+  let newSort = $('#sortBy').val();
+
+  console.log(newSort);
+}
