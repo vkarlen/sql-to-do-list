@@ -45,7 +45,7 @@
 ## Do Later
 
 - [x] Sort list by isDone so completed tasks fall to the bottom. (isDone and then id maybe?)
-- [] Remove check mark when task is already marked as done
+- [] Remove check mark when task is already marked as done.. OR change PUT so you can toggle complete?
 
 ## Stretch Goals
 
