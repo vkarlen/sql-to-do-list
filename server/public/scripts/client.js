@@ -37,8 +37,7 @@ function getList() {
     url: '/tasks',
   })
     .then((res) => {
-      //console.log('Back from server');
-      //console.log(res);
+      //console.log('Back from server', res);
 
       updateTable(res);
     })
@@ -58,7 +57,6 @@ function updateTable(taskList) {
 
     // check if Done
     if (task.isDone === true) {
-      //console.log('this is done', task);
       // Set class 'complete'
       rowClass = 'complete';
     }

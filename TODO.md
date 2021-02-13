@@ -30,6 +30,11 @@
   - [] font family & size
   - [] task change
 
+## Personal Stretch Goals
+
+- [] Drop down to change list order
+- [] Priority setting
+
 ## Do Later
 
 - [x] Sort list by isDone so completed tasks fall to the bottom. (isDone and then id maybe?)
