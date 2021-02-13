@@ -33,7 +33,7 @@ function addTask() {
 } // end addTask
 
 function getList() {
-  console.log('in getList');
+  //console.log('in getList');
 
   // Get current list from the server
   $.ajax({
@@ -137,7 +137,7 @@ function changeSort() {
     url: `/tasks/sort/${$('#sortBy').val()}`,
   })
     .then((res) => {
-      console.log('sort updated');
+      //console.log('sort updated');
       getList();
     })
     .catch((err) => {
