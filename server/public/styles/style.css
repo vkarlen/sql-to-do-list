@@ -1,5 +1,5 @@
 body {
-  background-color: gainsboro;
+  background-color: whitesmoke;
 }
 
 .complete {
@@ -7,11 +7,11 @@ body {
 }
 
 .lowPriority {
-  background-color: lightgreen;
+  background-color: palegreen;
 }
 
 .medPriority {
-  background-color: lightgoldenrodyellow;
+  background-color: palegoldenrod;
 }
 
 .highPriority {
