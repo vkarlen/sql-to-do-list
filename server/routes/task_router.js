@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 // Send task_list to client
 router.get('/', (req, res) => {
   //console.log('in GET');
-  let queryText = 'SELECT * FROM "task_list" ORDER BY "isDone", "id"';
+  let queryText = `SELECT * FROM "task_list" ORDER BY "isDone", "${currentSort}"`;
 
   pool
     .query(queryText)
