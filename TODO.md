@@ -32,10 +32,10 @@
 
 ## Personal Stretch Goals
 
-- [] Drop down to change list order
-  - [] order entered (id)
-  - [] priority level (priority)
-  - [] alphabetical (task)
+- [x] Drop down to change list order
+  - [x] order entered (id)
+  - [x] priority level (priority)
+  - [x] alphabetical (task)
 - [x] Priority setting
   - [x] use drop down to enter priority
   - [x] shows low/medium/high when rendered to DOM

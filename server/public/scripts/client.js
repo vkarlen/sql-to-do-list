@@ -4,6 +4,7 @@ function onReady() {
   $('#submitBtn').on('click', addTask);
   $(document).on('click', '.delete', deleteTask);
   $(document).on('click', '.markDone', markDone);
+  $('#sortBy').on('change', changeSort);
 
   getList();
 } // end onReady
@@ -128,3 +129,19 @@ function markDone() {
       alert('Could not mark this task as done. Try again.');
     });
 } // end markDone
+
+function changeSort() {
+  // send update to server
+  $.ajax({
+    method: 'PUT',
+    url: `/tasks/sort/${$('#sortBy').val()}`,
+  })
+    .then((res) => {
+      //console.log('sort updated');
+      getList();
+    })
+    .catch((err) => {
+      console.log('Sort error', err);
+      alert('Sort order was not updated. Try again.');
+    });
+}
