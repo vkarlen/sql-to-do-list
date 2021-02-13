@@ -36,11 +36,11 @@
   - [] order entered (id)
   - [] priority level (priority)
   - [] alphabetical (task)
-- [] Priority setting
+- [x] Priority setting
   - [x] use drop down to enter priority
-  - [] shows low/medium/high when rendered to DOM
-  - [] shows nothing if no priority
-  - [] background changes depending on priority
+  - [x] shows low/medium/high when rendered to DOM
+  - [x] shows nothing if no priority
+  - [x] background changes depending on priority
 
 ## Do Later
 
