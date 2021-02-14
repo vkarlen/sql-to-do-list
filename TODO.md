@@ -25,10 +25,10 @@
 - [x] Completed tasks should show it visibly on the DOM via color change or strike through or something
 - [x] Delete should remove it from the DOM and the db
 - [x] Complete button should set isDone to true in db, re render list
-- [] Style this b
-  - [] background color
-  - [] font family & size
-  - [] task change
+- [x] Style this b
+  - [x] background color
+  - [x] font family & size
+  - [x] task change
 
 ## Personal Stretch Goals
 
@@ -45,7 +45,7 @@
 ## Do Later
 
 - [x] Sort list by isDone so completed tasks fall to the bottom. (isDone and then id maybe?)
-- [] Remove check mark when task is already marked as done.. OR change PUT so you can toggle complete?
+- [x] Remove check mark when task is already marked as done.. OR change PUT so you can toggle complete?
 
 ## Stretch Goals
 
@@ -58,7 +58,7 @@
 
 ### feature-confirm-delete
 
-- [] Create an "Are you sure?" when deleting a task
+- [x] Create an "Are you sure?" when deleting a task
 
 ### feature-ordering-task-query
 

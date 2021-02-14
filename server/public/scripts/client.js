@@ -12,7 +12,7 @@ function onReady() {
 
 function addTask() {
   //console.log('in addTask');
-  console.log($('#priorityIn').val());
+  // console.log($('#priorityIn').val());
 
   $.ajax({
     method: 'POST',
@@ -103,20 +103,37 @@ function deleteTask() {
   //console.log('in delete', $(this).data('id'));
   let taskId = $(this).data('id');
 
-  // Send delete request to server
-  $.ajax({
-    method: 'DELETE',
-    url: `/tasks/${taskId}`,
-  })
-    .then((res) => {
-      //console.log('back from server');
+  //this is dumb but it works so who am I to judge?
+  let taskName = $(this).parent().siblings().first().text();
 
-      getList();
-    })
-    .catch((err) => {
-      console.log('Failed to delete', err);
-      alert('Could not delete task. Try again.');
-    });
+  swal({
+    title: `Are you sure you want to delete "${taskName}" from your to-do list?`,
+    icon: 'warning',
+    buttons: {
+      cancel: { visible: true, className: 'btn btn-light' },
+      confirm: { text: 'DELETE', className: 'btn btn-danger' },
+    },
+  }).then((willDelete) => {
+    if (willDelete) {
+      // Send delete request to server
+      $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskId}`,
+      })
+        .then((res) => {
+          //console.log('back from server');
+          getList();
+          swal(`"${taskName}" deleted!`, {
+            icon: 'success',
+            button: { className: 'btn btn-success' },
+          });
+        })
+        .catch((err) => {
+          console.log('Failed to delete', err);
+          alert('Could not delete task. Try again.');
+        });
+    }
+  });
 } // end deleteTask
 
 function markDone() {
