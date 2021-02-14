@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const pg = require('pg');
 
 const pool = require('../modules/pool');
 
+// Global Variables
 let currentSort = 'id';
 
 // Add inputted task to db
@@ -86,30 +86,12 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// Changes global sort
+// Change global sort
 router.put('/sort/:order', (req, res) => {
   currentSort = req.params.order;
   //console.log(currentSort);
 
   res.sendStatus(200);
-});
-
-// Grab a task by ID
-router.get('/:id', (req, res) => {
-  let taskId = req.params.id;
-
-  //console.log('in GET');
-  let sqlText = `SELECT * FROM "task_list" WHERE "id"=$1`;
-
-  pool
-    .query(sqlText, [taskId])
-    .then((dbRes) => {
-      res.send(dbRes.rows[0]);
-    })
-    .catch((err) => {
-      console.log('Error getting single tasks', err);
-      res.sendStatus(500);
-    });
 });
 
 module.exports = router;
