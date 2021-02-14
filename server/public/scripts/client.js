@@ -12,7 +12,7 @@ function onReady() {
 
 function addTask() {
   //console.log('in addTask');
-  console.log($('#priorityIn').val());
+  //console.log($('#priorityIn').val());
 
   $.ajax({
     method: 'POST',
@@ -103,8 +103,12 @@ function deleteTask() {
   //console.log('in delete', $(this).data('id'));
   let taskId = $(this).data('id');
 
+  //this is dumb but it works so who am I to judge?
+  let taskName = $(this).parent().siblings().first().text();
+
   swal({
-    title: 'Are you sure you want to delete this?',
+    title: `Are you sure you want to delete ${taskName} from your to-do list?`,
+    icon: 'warning',
     buttons: true,
     dangerMode: true,
   }).then((willDelete) => {
@@ -119,7 +123,7 @@ function deleteTask() {
         .then((res) => {
           //console.log('back from server');
           getList();
-          swal('Task deleted!');
+          swal(`${taskName} deleted!`, { icon: 'success' });
         })
         .catch((err) => {
           console.log('Failed to delete', err);
