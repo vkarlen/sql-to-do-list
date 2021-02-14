@@ -89,8 +89,8 @@ function updateTable(taskList) {
     // append to DOM
     $('#taskList').append(`
     <div class="row justify-content-center gx-0">
-      <div class="col-4 col-sm-6 listRow ${rowClass}">${task.task}</div>
-      <div class="col-3 col-sm-2 endCols listRow ${rowClass}">${priorityText}</div>
+      <div class="col-3 col-sm-4 listRow ${rowClass}">${task.task}</div>
+      <div class="col-2 col-sm-1 endCols listRow ${rowClass}">${priorityText}</div>
       <div class="col-2 col-sm-1 btn-group">
         <button class="btn btn-success markDone" data-id="${task.id}" ${disableBtn}>✓</button>
         <button class="btn btn-danger delete" data-id="${task.id}">X</button>

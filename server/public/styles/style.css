@@ -25,6 +25,7 @@ h2 {
 
 .listRow {
   padding: 7px;
+  word-wrap: break-word;
 }
 
 .endCols {
