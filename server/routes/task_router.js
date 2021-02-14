@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const moment = require('moment');
 
 const pool = require('../modules/pool');
 
@@ -73,10 +74,14 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
   //console.log('In router PUT');
   let taskId = req.params.id;
-  let sqlText = `UPDATE "task_list" SET "isDone"='true' WHERE "id"=$1`;
+  let sqlText = `UPDATE "task_list" SET "isDone"='true', "timeDone"=$2 WHERE "id"=$1;`;
+
+  //grab time
+  let time = moment().format('L');
+  //console.log(time);
 
   pool
-    .query(sqlText, [taskId])
+    .query(sqlText, [taskId, time])
     .then((resDB) => {
       res.sendStatus(200);
     })
