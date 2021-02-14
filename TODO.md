@@ -58,7 +58,7 @@
 
 ### feature-confirm-delete
 
-- [] Create an "Are you sure?" when deleting a task
+- [x] Create an "Are you sure?" when deleting a task
 
 ### feature-ordering-task-query
 

@@ -12,7 +12,7 @@ function onReady() {
 
 function addTask() {
   //console.log('in addTask');
-  //console.log($('#priorityIn').val());
+  // console.log($('#priorityIn').val());
 
   $.ajax({
     method: 'POST',
@@ -107,23 +107,26 @@ function deleteTask() {
   let taskName = $(this).parent().siblings().first().text();
 
   swal({
-    title: `Are you sure you want to delete ${taskName} from your to-do list?`,
+    title: `Are you sure you want to delete "${taskName}" from your to-do list?`,
     icon: 'warning',
-    buttons: true,
-    dangerMode: true,
+    buttons: {
+      cancel: { visible: true, className: 'btn btn-light' },
+      confirm: { text: 'DELETE', className: 'btn btn-danger' },
+    },
   }).then((willDelete) => {
     if (willDelete) {
       // Send delete request to server
       $.ajax({
         method: 'DELETE',
         url: `/tasks/${taskId}`,
-        buttons: true,
-        dangerMode: true,
       })
         .then((res) => {
           //console.log('back from server');
           getList();
-          swal(`${taskName} deleted!`, { icon: 'success' });
+          swal(`"${taskName}" deleted!`, {
+            icon: 'success',
+            button: { className: 'btn btn-success' },
+          });
         })
         .catch((err) => {
           console.log('Failed to delete', err);
