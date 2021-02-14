@@ -7,5 +7,5 @@ CREATE TABLE "task_list" (
 	"task" VARCHAR(1024),
   "priority" VARCHAR(1),
 	"isDone" BOOLEAN DEFAULT FALSE,
-  "timeDone" DATE
+  "timeDone" VARCHAR(30)
 );

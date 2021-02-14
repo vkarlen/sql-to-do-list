@@ -77,7 +77,7 @@ router.put('/:id', (req, res) => {
   let sqlText = `UPDATE "task_list" SET "isDone"='true', "timeDone"=$2 WHERE "id"=$1;`;
 
   //grab time
-  let time = new Date();
+  let time = moment(new Date()).format('LL');
   console.log(time);
 
   pool

@@ -68,6 +68,7 @@ function updateTable(taskList) {
       // Set class 'complete'
       rowClass = 'complete';
       disableBtn = 'disabled';
+      priorityText = task.timeDone;
     } else {
       // if it is not done, set up the priority displays
       if (task.priority === '1') {
