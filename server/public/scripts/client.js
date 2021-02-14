@@ -7,10 +7,12 @@ function onReady() {
   $('#sortBy').on('change', changeSort);
 
   getList();
+  changeSort();
 } // end onReady
 
 function addTask() {
   //console.log('in addTask');
+  console.log($('#priorityIn').val());
 
   $.ajax({
     method: 'POST',
@@ -22,7 +24,7 @@ function addTask() {
   })
     .then((res) => {
       //console.log('Back from server');
-
+      $('#priorityIn').val('0');
       $('#taskIn').val('');
       getList();
     })
@@ -52,18 +54,20 @@ function getList() {
 
 function updateTable(taskList) {
   //console.log('in updateTable');
-  $('#taskTable').empty();
+  $('#taskList').empty();
 
   // loop through task list
   for (const task of taskList) {
     //console.log(task);
     let rowClass = '';
     let priorityText = '';
+    let disableBtn = '';
 
     // check if Done
     if (task.isDone === true) {
       // Set class 'complete'
       rowClass = 'complete';
+      disableBtn = 'disabled';
     } else {
       // if it is not done, set up the priority displays
       if (task.priority === '1') {
@@ -83,12 +87,15 @@ function updateTable(taskList) {
     }
 
     // append to DOM
-    $('#taskTable').append(`<tr class ="${rowClass}">
-      <td>${task.task}</td>
-      <td>${priorityText}</td>
-      <td><button class="markDone" data-id="${task.id}">✓</button></td>
-      <td><button class="delete" data-id="${task.id}">X</button></td>
-    </tr>`);
+    $('#taskList').append(`
+    <div class="row justify-content-center gx-0">
+      <div class="col-4 col-sm-6 listRow ${rowClass}">${task.task}</div>
+      <div class="col-3 col-sm-2 endCols listRow ${rowClass}">${priorityText}</div>
+      <div class="col-2 col-sm-1 btn-group">
+        <button class="btn btn-success markDone" data-id="${task.id}" ${disableBtn}>✓</button>
+        <button class="btn btn-danger delete" data-id="${task.id}">X</button>
+      </div>
+    </div>`);
   }
 } // end updateTable
 
@@ -144,4 +151,4 @@ function changeSort() {
       console.log('Sort error', err);
       alert('Sort order was not updated. Try again.');
     });
-}
+} // end change sort
