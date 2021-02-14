@@ -103,20 +103,30 @@ function deleteTask() {
   //console.log('in delete', $(this).data('id'));
   let taskId = $(this).data('id');
 
-  // Send delete request to server
-  $.ajax({
-    method: 'DELETE',
-    url: `/tasks/${taskId}`,
-  })
-    .then((res) => {
-      //console.log('back from server');
-
-      getList();
-    })
-    .catch((err) => {
-      console.log('Failed to delete', err);
-      alert('Could not delete task. Try again.');
-    });
+  swal({
+    title: 'Are you sure you want to delete this?',
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      // Send delete request to server
+      $.ajax({
+        method: 'DELETE',
+        url: `/tasks/${taskId}`,
+        buttons: true,
+        dangerMode: true,
+      })
+        .then((res) => {
+          //console.log('back from server');
+          getList();
+          swal('Task deleted!');
+        })
+        .catch((err) => {
+          console.log('Failed to delete', err);
+          alert('Could not delete task. Try again.');
+        });
+    }
+  });
 } // end deleteTask
 
 function markDone() {
