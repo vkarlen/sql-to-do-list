@@ -51,10 +51,10 @@
 
 ### feature-styling-bootstrap
 
-- [ ] Add Bootstrap to front end for additional style
-  - [ ] Buttons - make create and complete green and delete red
-  - [ ] Inputs - style text input
-  - [ ] Responsive - make app responsive to different screen sizes [Layout](https://getbootstrap.com/docs/4.1/layout/overview/)
+- [x] Add Bootstrap to front end for additional style
+  - [x] Buttons - make create and complete green and delete red
+  - [x] Inputs - style text input
+  - [x] Responsive - make app responsive to different screen sizes [Layout](https://getbootstrap.com/docs/4.1/layout/overview/)
 
 ### feature-confirm-delete
 

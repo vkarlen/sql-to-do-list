@@ -25,35 +25,33 @@
         <h2>Add New Task</h2>
       </div>
       <div class="row justify-content-center">
-        <div class="col-sm-6">
-          <input type="text" id="taskIn" />
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="taskIn" />
         </div>
-        <div class="col-sm-4 col-md-3">
-          <label>
-            Priority:
-            <select id="priorityIn">
-              <option value="0">None</option>
-              <option value="1">Low</option>
-              <option value="2">Medium</option>
-              <option value="3">High</option>
-            </select>
-          </label>
+        <div class="col-sm-3 col-md-2">
+          <select class="form-select" id="priorityIn">
+            <option value="0">Set Priority</option>
+            <option value="1">Low</option>
+            <option value="2">Medium</option>
+            <option value="3">High</option>
+          </select>
         </div>
+      </div>
+      <div class="row justify-content-center">
         <div class="col-sm-1">
-          <button id="submitBtn">Submit</button>
+          <button type="button" class="btn btn-light" id="submitBtn">
+            Submit
+          </button>
         </div>
       </div>
     </div>
 
     <div class="container" id="taskContainer">
-      <div class="row">
-        <h2>Task List</h2>
-      </div>
       <div class="row justify-content-end">
         <div class="col-md-4 col-lg-3" id="sort">
           <label>
-            Sort by:
-            <select id="sortBy">
+            Sort by
+            <select class="form-select-sm" id="sortBy">
               <option value="id">Order entered</option>
               <option value="priority">Priority</option>
               <option value="task">Alphabetical</option>
@@ -62,19 +60,16 @@
         </div>
       </div>
       <div class="row">
-        <table>
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Priority</th>
-              <th>Done</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody id="taskTable">
-            <!--jQuery will fill this-->
-          </tbody>
-        </table>
+        <h2>Task List</h2>
+      </div>
+      <div class="row justify-content-center colHeads">
+        <div class="col-4 col-sm-6">Task</div>
+        <div class="col-3 col-sm-2 endCols">Priority</div>
+        <div class="col-2 col-sm-1 endCols"></div>
+      </div>
+
+      <div id="taskList">
+        <!--jQuery will fill this-->
       </div>
     </div>
   </body>
