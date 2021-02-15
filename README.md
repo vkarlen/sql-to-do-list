@@ -28,7 +28,7 @@ Here is how you use this app:
 
 1. Start by adding any tasks you have in the input field at the top of the page. Select the priority (or don't; its up to you!) and then click 'Submit' to add it to your list.
 2. Change the order of your active tasks by using the 'Sort by' dropdown.
-3. As you complete tasks, click the green check mark. The task will turn grey and fall to the bottom of the list so you can see how much progress you've made.
+3. As you complete tasks, click the green check mark. The task will turn grey and fall to the bottom of the list so you can see how much progress you've made. The date it was completed will display in place of its priority.
 4. If you need to delete any tasks, click the red X and then confirm the delete.
 5. Take a break from your tasks and come back later. Your list will still be there!
 

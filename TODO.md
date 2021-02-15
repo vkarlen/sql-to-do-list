@@ -66,4 +66,4 @@
 
 ### feature-time-completed
 
-- [] Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format using moment.js
+- [x] Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format using moment.js
