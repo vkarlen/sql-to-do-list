@@ -1,4 +1,4 @@
-# PROJECT NAME
+# SQL To-Do List
 
 ## Description
 
