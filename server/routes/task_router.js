@@ -99,4 +99,21 @@ router.put('/sort/:order', (req, res) => {
   res.sendStatus(200);
 });
 
+// Reactivate a task
+router.put('/re/:id', (req, res) => {
+  //console.log('In router PUT');
+  let taskId = req.params.id;
+  let sqlText = `UPDATE "task_list" SET "isDone"='false', "timeDone"='null' WHERE "id"=$1;`;
+
+  pool
+    .query(sqlText, [taskId])
+    .then((resDB) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log('Error in PUT', err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;

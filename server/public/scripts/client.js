@@ -5,6 +5,7 @@ function onReady() {
   $(document).on('click', '.delete', deleteTask);
   $(document).on('click', '.markDone', markDone);
   $('#sortBy').on('change', changeSort);
+  $(document).on('click', '.complete', uncheckTask);
 
   getList();
   changeSort();
@@ -89,7 +90,7 @@ function updateTable(taskList) {
 
     // append to DOM
     $('#taskList').append(`
-    <div class="row justify-content-center gx-0">
+    <div class="row justify-content-center gx-0" data-id="${task.id}">
       <div class="col-3 col-sm-4 listRow ${rowClass}">${task.task}</div>
       <div class="col-3 col-sm-2 endCols listRow ${rowClass}">${priorityText}</div>
       <div class="col-2 col-sm-1 btn-group">
@@ -170,3 +171,21 @@ function changeSort() {
       alert('Sort order was not updated. Try again.');
     });
 } // end change sort
+
+function uncheckTask() {
+  //console.log('in uncheck', $(this).parent().data('id'));
+
+  // send update to server
+  $.ajax({
+    method: 'PUT',
+    url: `/tasks/re/${$(this).parent().data('id')}`,
+  })
+    .then((res) => {
+      //console.log('Marked done');
+      getList();
+    })
+    .catch((err) => {
+      console.log('Not reactivated', err);
+      alert('Could not reactivate this task. Try again.');
+    });
+} // end uncheckTask
