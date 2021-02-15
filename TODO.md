@@ -41,6 +41,7 @@
   - [x] shows low/medium/high when rendered to DOM
   - [x] shows nothing if no priority
   - [x] background changes depending on priority
+- [ ] Clicking a completed task should make it active again
 
 ## Do Later
 
