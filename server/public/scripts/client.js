@@ -176,16 +176,31 @@ function uncheckTask() {
   //console.log('in uncheck', $(this).parent().data('id'));
 
   // send update to server
-  $.ajax({
-    method: 'PUT',
-    url: `/tasks/re/${$(this).parent().data('id')}`,
-  })
-    .then((res) => {
-      //console.log('Marked done');
-      getList();
-    })
-    .catch((err) => {
-      console.log('Not reactivated', err);
-      alert('Could not reactivate this task. Try again.');
-    });
+  swal({
+    title: `Are you sure you want to reactivate this task?`,
+    icon: 'info',
+    buttons: {
+      cancel: { visible: true, className: 'btn btn-light' },
+      confirm: { text: 'Yes', className: 'btn btn-success' },
+    },
+  }).then((willDelete) => {
+    if (willDelete) {
+      $.ajax({
+        method: 'PUT',
+        url: `/tasks/re/${$(this).parent().data('id')}`,
+      })
+        .then((res) => {
+          //console.log('Marked done');
+          getList();
+          swal(`The task is back!`, {
+            icon: 'success',
+            button: { className: 'btn btn-success' },
+          });
+        })
+        .catch((err) => {
+          console.log('Not reactivated', err);
+          alert('Could not reactivate this task. Try again.');
+        });
+    }
+  });
 } // end uncheckTask
