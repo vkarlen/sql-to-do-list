@@ -6,7 +6,7 @@ _Duration: 3 Day Sprint_
 
 An app to store your to-do list in and check it off as you go!
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
+To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](https://sql-to-do-list-vk.herokuapp.com/)
 
 ## Screen Shot
 
