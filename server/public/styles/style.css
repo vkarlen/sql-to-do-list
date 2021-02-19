@@ -65,3 +65,9 @@ h2 {
 #submitBtn {
   margin: 10px;
 }
+
+#footer {
+  background-color: #d3d3d3;
+  padding: 3px;
+  padding-left: 20px
+}
